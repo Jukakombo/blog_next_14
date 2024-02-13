@@ -33,8 +33,8 @@ const page = () => {
           />
           <textarea
             name=""
-            cols="30"
-            rows="10"
+            cols={30}
+            rows={10}
             placeholder="Type message here..."
             className="bg-gray-700 my-4 p-2 rounded-sm outline-none"
           ></textarea>
