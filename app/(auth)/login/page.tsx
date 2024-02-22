@@ -1,6 +1,13 @@
+import LoginForm from "@/components/loginform/LoginForm";
+ 
 import React from "react";
 
-const page = () => {
-  return <div>login</div>;
+const LoginPage = async () => {
+  return (
+    <div>
+      <LoginForm />
+    </div> 
+ 
+  );
 };
-export default page;
+export default LoginPage;

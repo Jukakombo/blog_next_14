@@ -8,8 +8,19 @@ export const metadata: Metadata = {
   description: "Stay updated with our latest blog.",
 };
 
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/blog", {
+    next: { revalidate: 3600 },
+  });
+
+  if (!res.ok) {
+    throw new Error("Something went wrong.");
+  }
+  return res.json();
+};
+
 const BlogPost = async ({ params, searchParams }: any) => {
-  const posts = await getPosts();
+  const posts = await getData();
   // console.log(posts);
   return (
     <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">

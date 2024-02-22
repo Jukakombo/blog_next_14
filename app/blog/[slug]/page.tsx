@@ -14,17 +14,16 @@ export const generateMetadata = async ({ params }: any) => {
   };
 };
 
-// const getData = async (slug: any) => {
-//   const res = await fetch(
-//     `https://jsonplaceholder.typicode.com/posts/${slug}`,
-//     { cache: "no-store" }
-//   );
-//   if (!res.ok) {
-//     throw new Error("Error fetching!");
-//   } else {
-//     return res.json();
-//   }
-// };
+const getData = async (slug: any) => {
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`, {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Error fetching!");
+  } else {
+    return res.json();
+  }
+};
 const SinglePage = async ({
   params,
   searchParams,
